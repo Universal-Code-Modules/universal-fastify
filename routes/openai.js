@@ -1,5 +1,6 @@
 const ut = require('../utilities');
-const openAI = ut.safeRequire('../../LLMs/OpenAI/openai-connector');
+const openAI = ut.safeRequire('./../../LLMs/OpenAI/openai-connector');
+console.log(fs.existsSync( './../../LLMs/OpenAI/openai-connector.js' ))
 
 module.exports = function (fastify, opts) {
     if (!openAI) {

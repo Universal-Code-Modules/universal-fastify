@@ -91,7 +91,7 @@ const math = require('@dip1059/safe-math-js');
    return require(modulePath);
   }
   catch (e) {
-   console.log('requireF(): The file "' + modulePath + '".js could not be loaded.');
+   console.log('safeRequire(): The file "' + modulePath + '".js could not be loaded.');
    return false;
   }
 }
