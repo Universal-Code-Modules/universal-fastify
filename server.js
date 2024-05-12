@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path')
 const fs = require('fs')
 
@@ -24,15 +25,7 @@ const fastify = require('fastify')({
     // constraints: { host: 'example.com' } // optional: default {}
 })
  const modules = {};
- modules.openai = require('./routes/openai')(fastify, {});
-
-  // Route to handle POST requests
-  // fastify.post('/sendMessage', async (request, reply) => {
-  //   const userMessage = request.body.message;
-  //   const response = await openAI.language.generate({text:userMessage});
-  
-  //   return { reply: response.message };
-  // });
+ if (process.env.OPENAI_API_KEY) modules.openai = require('./routes/openai')(fastify, {});
   
   // Run the server!
   fastify.listen({ port: 3000 }, function (err, address) {
