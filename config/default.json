@@ -1,0 +1,12 @@
+{
+  "llm": {
+    "openai": {
+      "enabled": false,
+      "options": {}
+    },
+    "huggingface": {
+      "enabled": false,
+      "options": {}
+    }
+  }
+}

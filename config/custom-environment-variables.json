@@ -1,0 +1,14 @@
+{
+  "llm": {
+    "openai": {
+      "options": {
+        "apiKey": "OPENAI_API_KEY"
+      }
+    },
+    "huggingface": {
+      "options": {
+        "apiKey": "HUGGINGFACE_API_KEY"
+      }
+    }
+  }
+}
