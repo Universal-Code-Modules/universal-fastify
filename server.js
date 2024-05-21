@@ -1,8 +1,10 @@
 'use strict';
 
 const path = require('path');
+const config = require('config');
 const fs = require('fs');
 
+const initDecorators = require('./decorators');
 const initPlugins = require('./plugins');
 const initRoutes = require('./routes');
 
@@ -16,11 +18,12 @@ const fastify = require('fastify')({
   },
 });
 
+initDecorators(fastify);
 initPlugins(fastify);
 initRoutes(fastify);
 
 // Run the server!
-fastify.listen({ port: 5000 }, (err, address) => {
+fastify.listen({ port: config.port }, (err, address) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
