@@ -1,0 +1,13 @@
+{
+  "port": 5000,
+  "llm": {
+    "openai": {
+      "enabled": true,
+      "chat": {}
+    },
+    "huggingface": {
+      "enabled": false,
+      "chat": {}
+    }
+  }
+}
