@@ -15,11 +15,13 @@ const root = async (fastify) => {
     if (!fastify.openai) {
       throw new Error('OpenAI plugin has not been configured');
     }
-    const userMessage = req.body.message;
+    const text = req.body.query;
     // TODO: Need to add mechanism how to manage chats,
     // now chat gets created on every request
     const chat = fastify.openai.createChat();
-    const response = await chat.message(userMessage);
+
+    fastify.log.info(`Incoming message: ${text}`);
+    const response = await chat.message({ text });
 
     return { reply: response.message };
   });
