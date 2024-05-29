@@ -23,7 +23,7 @@ const root = async (fastify) => {
     fastify.log.info(`Incoming message: ${text}`);
     const response = await chat.message({ text });
 
-    return { reply: response.message };
+    return { reply: response };
   });
 };
 
